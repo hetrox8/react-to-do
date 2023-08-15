@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import { useOnClickOutside } from "./useOnClickOutside";
+import useOnClickOutside from './useOnclickOutside';
+
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const ref = useRef();
@@ -7,7 +8,7 @@ const Navbar = () => {
   useOnClickOutside(ref, dropdown, () => setDropdown(false));
   return (
     // ...
-    document.removeEventListener("mousedown", handler);
+    document.removeEventListener("mousedown")
   );
 };
 export default Navbar;
